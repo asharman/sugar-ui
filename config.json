@@ -1,0 +1,16 @@
+{
+  "source": ["tokens/*.js", "tokens/themes/*.json"],
+  "platforms": {
+    "css": {
+      "transformGroup": "css",
+      "buildPath": "build/css/",
+      "prefix": "sui",
+      "files": [
+        {
+          "destination": "_theme.css",
+          "format": "css/variables"
+        }
+      ]
+    }
+  }
+}
