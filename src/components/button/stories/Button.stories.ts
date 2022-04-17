@@ -5,4 +5,6 @@ export default {
   title: "Example/Button",
 };
 
-export const Default = () => html`<sui-button>Hello World</sui-button>`;
+export const Default = () => html`<sui-button>Buy Now</sui-button>`;
+
+export const VariantNegative = () => html`<sui-button variant="negative">Cancel</sui-button>`
