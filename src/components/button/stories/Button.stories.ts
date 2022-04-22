@@ -9,7 +9,6 @@ export default {
 const Template = ({ variant, text }) =>
   html`<sui-button variant=${ifDefined(variant)}>${text}</sui-button>`;
 
-//👇 Each story then reuses that template
 export const Default = Template.bind({});
 Default.args = {
   text: "Buy Now",
@@ -17,6 +16,14 @@ Default.args = {
 
 export const VariantNegative = Template.bind({});
 VariantNegative.args = {
+  ...Default.args,
   variant: "negative",
+  text: "Cancel",
+};
+
+export const VariantWarning = Template.bind({});
+VariantWarning.args = {
+  ...Default.args,
+  variant: "warning",
   text: "Cancel",
 };

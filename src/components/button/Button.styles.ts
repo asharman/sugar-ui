@@ -36,18 +36,6 @@ export default css`
       --sui-cta-padding,
       var(--sui-size-scale-em-2, 0.79em)
     );
-  }
-
-  :host([variant="negative"]) {
-    /* Colors */
-    --sui-button-background: var(
-      --sui-primary-color,
-      var(--sui-color-red-700, #f03e3e)
-    );
-    --sui-button-text-color: var(
-      --sui-text-on-negative,
-      var(--sui-color-white, #ffffff)
-    );
 
     /* Border Styles */
     --sui-button-border-color: var(
@@ -75,6 +63,29 @@ export default css`
     );
   }
 
+  :host([variant="negative"]) {
+    /* Colors */
+    --sui-button-background: var(
+      --sui-negative-color,
+      var(--sui-color-red-700, #f03e3e)
+    );
+    --sui-button-text-color: var(
+      --sui-text-on-negative,
+      var(--sui-color-white, #ffffff)
+    );
+  }
+
+  :host([variant="warning"]) {
+    /* Colors */
+    --sui-button-background: var(
+      --sui-warning-color,
+      var(--sui-color-orange-700, #f76707)
+    );
+    --sui-button-text-color: var(
+      --sui-text-on-warning,
+      var(--sui-color-white, #ffffff)
+    );
+  }
   button {
     background: var(--sui-button-background);
     color: var(--sui-button-text-color);
