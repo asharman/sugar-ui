@@ -12,6 +12,16 @@ export default css`
       var(--sui-color-white, #ffffff)
     );
 
+    /* Sizing */
+    --sui-button-font-size: var(
+      --sui-cta-font-size,
+      var(--sui-size-scale-rem0, 1rem)
+    );
+    --sui-button-padding: var(
+      --sui-cta-padding,
+      var(--sui-size-scale-em-2, 0.79em)
+    );
+
     /* Border Styles */
     --sui-button-border-color: var(
       --sui-primary-border-color,
@@ -26,45 +36,20 @@ export default css`
       --sui-cta-border-radius,
       var(--sui-size-0, 0)
     );
+  }
 
-    /* Sizing */
-    --sui-button-font-size: var(
-      --sui-cta-font-size,
-      var(--sui-size-scale-rem0, 1rem)
+  :host([variant="primary"]) {
+    --sui-button-background: var(
+      --sui-primary-color,
+      var(--sui-color-blue-700, #4263eb)
     );
-    --sui-button-padding: var(
-      --sui-cta-padding,
-      var(--sui-size-scale-em-2, 0.79em)
-    );
-
-    /* Border Styles */
-    --sui-button-border-color: var(
-      --sui-primary-border-color,
-      var(--sui-color-opaque, rgba(0, 0, 0, 0))
-    );
-    --sui-button-border-style: var(--sui-negative-border-style, solid);
-    --sui-button-border-width: var(
-      --sui-primary-border-width,
-      var(--sui-size-0, 0)
-    );
-    --sui-button-border-radius: var(
-      --sui-cta-border-radius,
-      var(--sui-size-0, 0)
-    );
-
-    /* Sizing */
-    --sui-button-font-size: var(
-      --sui-cta-font-size,
-      var(--sui-size-scale-rem0, 1rem)
-    );
-    --sui-button-padding: var(
-      --sui-cta-padding,
-      var(--sui-size-scale-em-2, 0.79em)
+    --sui-button-text-color: var(
+      --sui-text-on-primary,
+      var(--sui-color-white, #ffffff)
     );
   }
 
   :host([variant="negative"]) {
-    /* Colors */
     --sui-button-background: var(
       --sui-negative-color,
       var(--sui-color-red-700, #f03e3e)
@@ -76,7 +61,6 @@ export default css`
   }
 
   :host([variant="warning"]) {
-    /* Colors */
     --sui-button-background: var(
       --sui-warning-color,
       var(--sui-color-orange-700, #f76707)
@@ -86,8 +70,47 @@ export default css`
       var(--sui-color-white, #ffffff)
     );
   }
+
+  :host([size="small"]) {
+    --sui-button-font-size: var(
+      --sui-cta-text-small,
+      var(--sui-size-scale-rem-2, 0.79rem)
+    );
+  }
+
+  :host([size="medium"]) {
+    --sui-button-font-size: var(
+      --sui-cta-text-medium,
+      var(--sui-size-scale-rem0, 1rem)
+    );
+  }
+
+  :host([size="large"]) {
+    --sui-button-font-size: var(
+      --sui-cta-text-large,
+      var(--sui-size-scale-rem2, 0.79rem)
+    );
+  }
+
+  :host([appearance="outline"]) {
+    --sui-button-text-color: var(--sui-button-background);
+    --sui-button-border-color: var(--sui-button-background);
+    --sui-button-border-width: var(
+      --sui-outline-border-width,
+      --sui-size-scale-rem-10,
+      0.308rem
+    );
+    --sui-button-important-background: var(
+      --sui-color-opaque,
+      rgba(0, 0, 0, 0)
+    );
+  }
+
   button {
-    background: var(--sui-button-background);
+    background: var(
+      --sui-button-important-background,
+      var(--sui-button-background)
+    );
     color: var(--sui-button-text-color);
     border-width: var(--sui-button-border-width);
     border-style: var(--sui-button-border-style);
